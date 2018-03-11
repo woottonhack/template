@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<!-- 
+    Mingjie Jiang @mj66 
+    Wootton High School Club Website Templates
+    MIT License
+    
+    Site is compile with Handlebars.js
+    All content delivered with JavaScript
+-->
+
+<head>
+    <!-- Normalize -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8/normalize.min.css">
+
+    <!-- Styled Components: Chota -->
+    <link rel="stylesheet" href="https://unpkg.com/chota@latest">
+
+    <!-- Custom Styling -->
+    <link rel="stylesheet" href="assets/css/site.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Meta Template -->
+    <script id="site-meta" type="text/x-handlebars-template">
+        <title>{{meta.club}}</title>
+        
+        <!-- SEO-->
+        <meta name="description" content="{{meta.shortDesc}}">
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8">
+        
+        <style>
+            :root {
+                --primary-color: {{customize.siteColor}};
+            }
+
+            {{#if customize.navbar.colored}}
+            nav {
+                background-color: {{customize.siteColor}};
+            }
+            {{/if}}
+
+            {{#if customize.navbar.textWhite}}
+            .brand {
+                color: #fff!important;
+            }
+            {{/if}}
+
+            .hint {
+                color: {{customize.siteColor}}
+                font-style: italic;
+                opacity: .9!important;
+            }
+        </style>
+    </script>
+
+</head>
+
+<body>
+    <!-- Site Template -->
+    <script id="site-main" type="text/x-handlebars-template">
+        <nav class="nav">
+            <div class="nav-center">
+                <a href="#!" class="brand">{{meta.club}}</a>
+            </div>
+        </nav>
+        
+        <div class="content">
+            {{#if banner.show}}
+                <!-- Banner -->
+                <div class="row">
+                    <div class="col card banner">
+                        <img src="{{banner.imageUrl}}">
+                    </div>
+                </div>
+            {{/if}}
+
+            <!-- Description & Meeting -->
+            <div class="row">
+                <!-- Club Description -->
+                <div class="col card centered">
+                    <header>
+                        {{#if meta.hasLogo}}
+                            <img src="{{meta.logoUrl}}" class="logo">
+                        {{/if}}
+                        <h4>About {{meta.club}}</h4>
+                    </header>
+                    <p class="hint">"{{meta.shortDesc}}"</p>
+                    
+                    <p>{{meta.desc}}</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                
+                <!-- Next Meeting Information -->
+                <div class="col card">
+                    <header>
+                        <h4>Next Meeting</h4>
+                    </header>
+                    
+                    <p><strong>{{nextMeeting}}</strong> in {{meeting.room}}
+                        {{#if meeting.showRemind}}
+                        <br /><a href="{{meeting.remindLink}}">* Want a reminder?</a>
+                        {{/if}}
+                    </p>
+                    
+                    <p><strong>Topic: </strong>{{meeting.topic}}</p>
+                    
+                    <footer class="is-right">
+                        <a class="button primary" href="{{meeting.material.link}}">{{getMaterials}}</a>
+                    </footer>
+                </div>
+
+                <div class="col card">
+                    <header>
+                        <h4>Announcements</h4>
+                    </header>
+
+                    <table class="announcements" style="width:100%">
+                    {{#each announcement}}
+                        <tr class="announcement">
+                            <td>{{date}}</td>
+                            <td>{{content}}</td>
+                        </tr>
+                    {{/each}}
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="footer">
+            &copy;{{meta.club}} | A student-led club of <a href="http://www.montgomeryschoolsmd.org/schools/woottonhs/">Wootton High School</a><br />
+            <a href="{{master.link}}"><img src="https://img.shields.io/badge/WUD-{{master.version}}-%23e42d42.svg?style=flat"></a>
+        </div>
+    </script>
+
+    <main id="site"></main>
+
+    <!-- Site Footer Scripts -->
+    <!-- Core: Handlebars -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@4/dist/handlebars.min.js"></script>
+
+    <!-- Core: club.config.js -->
+    <script src="club.config.js"></script>
+
+    <!-- Core: Site.js -->
+    <script src="assets/js/site.js"></script>
+</body>

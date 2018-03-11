@@ -1,0 +1,100 @@
+/*
+ * Mingjie Jiang @mj66 
+ * Wootton High School Club Website Templates
+ * MIT License
+*/
+
+:root {
+    --lightGrey-color: #ddd;
+    --darkGrey-color: #888;
+    --grid-maxWidth: 120rem;
+    --grid-gutter: 1.5rem;
+    --font-family: "Averta", sans-serif;
+  }
+
+body {
+    padding-top: 4em;
+}
+
+.footer {
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 1.3em;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    background-color: #ffffff;
+    width: 100%;
+    box-shadow: 0 0 5px 1px rgba(0,0,0,0.25);
+    padding: 0.6em;
+}
+
+.brand {
+    font-size: 2.2vw!important;
+}
+
+.brand:hover {
+    color: #555;
+}
+
+.content {
+    margin: 10px;
+}
+
+.card {
+    border-color: transparent;
+    box-shadow: none;
+}
+
+.card header h4 {
+    margin-bottom: 0;
+}
+
+.banner {
+    text-align: center;
+    box-shadow: none;
+}
+
+.banner img {
+    max-height: 50vh;
+}
+
+.centered {
+    text-align: center;
+}
+
+.announcements {
+    font-size: 80%;
+}
+
+.logo {
+    max-height: 5em;
+}
+
+.tag {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.wud {
+    vertical-align: middle;
+    float: left; 
+}
+
+.version {
+    color: lightgray;
+    font-size: 0.5em;
+}
+
+.version.ban2 {
+  vertical-align:top;
+}
+
+.text-cloud {
+    text-align: left;
+}

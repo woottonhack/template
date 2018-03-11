@@ -1,0 +1,20 @@
+/*
+ * Mingjie Jiang @mj66 
+ * Wootton High School Club Website Templates
+ * MIT License
+*/
+@font-face {
+    font-family: 'Averta';
+    src: url('../fonts/averta-regular.woff2') format('woff2');
+    src: url('../fonts/averta-regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Averta';
+    src: url('../fonts/averta-bold.woff2') format('woff2');
+    src: url('../fonts/averta-bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
