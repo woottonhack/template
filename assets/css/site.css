@@ -23,6 +23,8 @@ body {
     background-color: #ffffff;
     text-align: center;
     padding: 1.3em;
+
+    line-height: 50%;
 }
 
 nav {
@@ -81,20 +83,22 @@ nav {
     border-color: transparent;
 }
 
-.wud {
-    vertical-align: middle;
-    float: left; 
-}
-
 .version {
     color: lightgray;
     font-size: 0.5em;
-}
-
-.version.ban2 {
-  vertical-align:top;
+    line-height: 50%;
 }
 
 .text-cloud {
     text-align: left;
+}
+
+h4 {
+    font-weight: bold;
+}
+
+.icon {
+    max-height: 1.2em;
+    display: inline-block;
+    vertical-align: text-bottom;
 }

@@ -16,6 +16,9 @@
     <!-- Styled Components: Chota -->
     <link rel="stylesheet" href="https://unpkg.com/chota@latest">
 
+    <!-- Icons: Font Awesome -->
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+
     <!-- Custom Styling -->
     <link rel="stylesheet" href="assets/css/site.css">
 
@@ -49,7 +52,6 @@
             .hint {
                 color: {{customize.siteColor}}
                 font-style: italic;
-                opacity: .9!important;
             }
         </style>
     </script>
@@ -96,25 +98,25 @@
                 <!-- Next Meeting Information -->
                 <div class="col card">
                     <header>
-                        <h4>Next Meeting</h4>
+                        <h4><i class="far fa-handshake"></i> Next Meeting</h4>
                     </header>
                     
-                    <p><strong>{{nextMeeting}}</strong> in {{meeting.room}}
+                    <p><u class="hint">{{nextMeeting}}</u> in <span class="hint">{{meeting.room}}</span>
                         {{#if meeting.showRemind}}
-                        <br /><a href="{{meeting.remindLink}}">* Want a reminder?</a>
+                        <br />* Want a reminder? <a href="{{meeting.remindLink}}">Remind me!</a>
                         {{/if}}
                     </p>
                     
                     <p><strong>Topic: </strong>{{meeting.topic}}</p>
                     
                     <footer class="is-right">
-                        <a class="button primary" href="{{meeting.material.link}}">{{getMaterials}}</a>
+                        <a class="button primary" href="{{meeting.material.link}}"><i class="fas fa-download"></i> {{getMaterials}}</a>
                     </footer>
                 </div>
 
                 <div class="col card">
                     <header>
-                        <h4>Announcements</h4>
+                        <h4><i class="fas fa-bullhorn"></i> Announcements</h4>
                     </header>
 
                     <table class="announcements" style="width:100%">
@@ -131,8 +133,8 @@
         </div>
         
         <div class="footer">
-            &copy;{{meta.club}} | A student-led club of <a href="http://www.montgomeryschoolsmd.org/schools/woottonhs/">Wootton High School</a><br />
-            <a href="{{master.link}}"><img src="https://img.shields.io/badge/WUD-{{master.version}}-%23e42d42.svg?style=flat"></a>
+            &copy; {{meta.club}} | A student-led club of <a href="http://www.montgomeryschoolsmd.org/schools/woottonhs/"><img class="icon" src="assets/images/avatar.png">Wootton High School</a><br />
+            <a href="{{master.link}}" class="version">Version {{master.version}}</a>
         </div>
     </script>
 
