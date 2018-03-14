@@ -76,9 +76,9 @@ var config = {
     social: {
         customHeader: "", //Custom header for the social media box (default value "Follow us on social media!")
         facebook: "https://facebook.com/mdhackclub",
-        twitter: "",
-        instagram: "",
-        email: ""
+        twitter: "https://twitter.com/mdhackclub",
+        instagram: "https://instagram.com/starthackclub",
+        email: "jiang@mingjie.info"
     },
 
     master: { //Master Data: Do not change
