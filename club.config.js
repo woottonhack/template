@@ -72,6 +72,15 @@ var config = {
         },
     },
 
+    //Your social media links!
+    social: {
+        customHeader: "", //Custom header for the social media box (default value "Follow us on social media!")
+        facebook: "https://facebook.com/mdhackclub",
+        twitter: "",
+        instagram: "",
+        email: ""
+    },
+
     master: { //Master Data: Do not change
         version: "0.1.1",
         link: "https://get.wootton.club"

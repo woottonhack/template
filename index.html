@@ -12,18 +12,18 @@
 <head>
     <!-- Normalize -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8/normalize.min.css">
-
+    
     <!-- Styled Components: Chota -->
     <link rel="stylesheet" href="https://unpkg.com/chota@latest">
-
+    
     <!-- Icons: Font Awesome -->
     <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
-
+    
     <!-- Custom Styling -->
     <link rel="stylesheet" href="assets/css/site.css">
-
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- Meta Template -->
     <script id="site-meta" type="text/x-handlebars-template">
         <title>{{meta.club}}</title>
@@ -36,26 +36,25 @@
             :root {
                 --primary-color: {{customize.siteColor}};
             }
-
+            
             {{#if customize.navbar.colored}}
             nav {
                 background-color: {{customize.siteColor}};
             }
             {{/if}}
-
+            
             {{#if customize.navbar.textWhite}}
             .brand {
                 color: #fff!important;
             }
             {{/if}}
-
+            
             .hint {
                 color: {{customize.siteColor}}
-                font-style: italic;
             }
         </style>
     </script>
-
+    
 </head>
 
 <body>
@@ -69,21 +68,21 @@
         
         <div class="content">
             {{#if banner.show}}
-                <!-- Banner -->
-                <div class="row">
-                    <div class="col card banner">
-                        <img src="{{banner.imageUrl}}">
-                    </div>
+            <!-- Banner -->
+            <div class="row">
+                <div class="col card banner">
+                    <img src="{{banner.imageUrl}}">
                 </div>
+            </div>
             {{/if}}
-
+            
             <!-- Description & Meeting -->
             <div class="row">
                 <!-- Club Description -->
                 <div class="col card centered">
                     <header>
                         {{#if meta.hasLogo}}
-                            <img src="{{meta.logoUrl}}" class="logo">
+                        <img src="{{meta.logoUrl}}" class="logo">
                         {{/if}}
                         <h4>About {{meta.club}}</h4>
                     </header>
@@ -113,22 +112,43 @@
                         <a class="button primary" href="{{meeting.material.link}}"><i class="fas fa-download"></i> {{getMaterials}}</a>
                     </footer>
                 </div>
-
+                
                 <div class="col card">
                     <header>
                         <h4><i class="fas fa-bullhorn"></i> Announcements</h4>
                     </header>
-
+                    
                     <table class="announcements" style="width:100%">
-                    {{#each announcement}}
+                        {{#each announcement}}
                         <tr class="announcement">
                             <td>{{date}}</td>
                             <td>{{content}}</td>
                         </tr>
-                    {{/each}}
+                        {{/each}}
                     </table>
                 </div>
+            </div>
+            
+            <div class="row">
+                <div class="col card centered">
+                    <h4><i class="fas fa-share-alt-square"></i> 
+                    {{#ifEquals social.customHeader ""}}
+                        Follow us on social media!
+                    {{else}}
+                        {{social.customHeader}}
+                    {{/ifEquals}}
+                    </h4>
 
+                    <h3 style="margin-bottom: 0">
+                        <a href="{{social.facebook}}" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        &ensp;
+                        <a href="{{social.twitter}}" target="_blank"><i class="fab fa-twitter-square"></i></a>
+                        &ensp;
+                        <a href="{{social.instagram}}" target="_blank"><i class="fab fa-instagram"></i></a>
+                        &ensp;
+                        <a href="{{social.email}}" target="_blank"><i class="fas fa-envelope"></i></a>
+                    </h3>
+                </div>
             </div>
         </div>
         
@@ -137,16 +157,16 @@
             <a href="{{master.link}}" class="version">Version {{master.version}}</a>
         </div>
     </script>
-
+    
     <main id="site"></main>
-
+    
     <!-- Site Footer Scripts -->
     <!-- Core: Handlebars -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@4/dist/handlebars.min.js"></script>
-
+    
     <!-- Core: club.config.js -->
     <script src="club.config.js"></script>
-
+    
     <!-- Core: Site.js -->
     <script src="assets/js/site.js"></script>
 </body>
